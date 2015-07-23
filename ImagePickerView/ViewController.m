@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "ImagePickerView.h"
 
 @interface ViewController ()
+
+@property ImagePickerView* picker;
 
 @end
 
@@ -17,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
+    self.picker = [[ImagePickerView alloc]initWithFrame:self.view.frame collectionViewLayout:layout];
+    [self.view addSubview:self.picker];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
 }
 
 - (void)didReceiveMemoryWarning {
