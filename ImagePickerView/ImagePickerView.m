@@ -14,7 +14,7 @@
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     self = [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
-        self.backgroundColor = [UIColor yellowColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.delegate = self;
         self.dataSource = self;
         [self registerClass:[ImagePickerCell class] forCellWithReuseIdentifier:@"cell"];
@@ -68,10 +68,10 @@
     if ([assetSelected containsObject:url]) {
         [assetSelected removeObject:url];
     } else {
-        if (assetSelected.count < 10) {
+        if (assetSelected.count < 5) {
             [assetSelected addObject:url];
         } else {
-            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"You can only choose 10 images!" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"You can only choose 5 images!" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
             [alert show];
         }
     }

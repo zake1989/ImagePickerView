@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-    self.picker = [[ImagePickerView alloc]initWithFrame:self.view.frame collectionViewLayout:layout];
+    self.picker = [[ImagePickerView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height-20) collectionViewLayout:layout];
     [self.view addSubview:self.picker];
 }
 
