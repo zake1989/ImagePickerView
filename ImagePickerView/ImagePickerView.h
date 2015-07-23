@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface ImagePickerView : UICollectionView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface ImagePickerView : UICollectionView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+    ALAssetsLibrary *library;
+    NSMutableArray* groupsArray;
+    NSMutableArray* assetToDisplay;
+    NSMutableArray* assetSelected;
+    UILabel* subtitle;
+    UIImageView* arrow;
+}
 
 @end

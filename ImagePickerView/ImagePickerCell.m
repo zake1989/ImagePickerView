@@ -13,12 +13,18 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     self.image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    self.image.layer.cornerRadius = 4;
+    self.image.layer.masksToBounds = YES;
     self.numberLabel = [[UILabel alloc]initWithFrame:CGRectMake(63, 8, 23, 23)];
+    self.numberLabel.font = [UIFont systemFontOfSize:16];
+    self.numberLabel.textColor = [UIColor whiteColor];
+    self.numberLabel.textAlignment = NSTextAlignmentCenter;
+    
     [self addSubview:self.image];
     [self addSubview:self.numberLabel];
     
-    self.image.backgroundColor = [UIColor redColor];
-    self.numberLabel.backgroundColor = [UIColor whiteColor];
+    self.image.backgroundColor = [UIColor clearColor];
+    self.numberLabel.backgroundColor = [UIColor clearColor];
     return self;
 }
 
